@@ -1,0 +1,388 @@
+/* ===== RESET ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    background: #0f172a;
+    color: #e5e7eb;
+    overflow-x: hidden;
+}
+
+/* ===== MAIN LAYOUT ===== */
+.main-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* ===== SIDEBAR ===== */
+.sidebar {
+    width: 280px;
+    background: #020617;
+    padding: 25px;
+    position: fixed;
+    height: 100vh;
+    left: 0;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    animation: slideIn 1s ease;
+}
+
+@keyframes slideIn {
+    from { transform: translateX(-100px); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+/* ===== PROFILE ===== */
+.profile {
+    text-align: center;
+}
+
+.profile img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #38bdf8;
+    animation: glow 2s infinite alternate;
+}
+
+@keyframes glow {
+    from { box-shadow: 0 0 10px #38bdf8; }
+    to { box-shadow: 0 0 25px #38bdf8; }
+}
+
+.profile h2 {
+    margin-top: 10px;
+    font-size: 22px;
+}
+
+.profile p {
+    font-size: 14px;
+    color: #94a3b8;
+}
+
+/* ===== CONTACT ===== */
+.contact .leble {
+    font-size: 12px;
+    color: #64748b;
+}
+
+.contact .value {
+    font-size: 14px;
+    color: #e5e7eb;
+    text-decoration: none;
+}
+
+.contact > div {
+    margin-bottom: 10px;
+}
+
+/* ===== SOCIAL ===== */
+.social {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.social img {
+    width: 22px;
+    filter: invert(1);
+    transition: 0.3s;
+}
+
+.social img:hover {
+    transform: scale(1.3) rotate(8deg);
+}
+
+/* ===== MAIN CONTENT ===== */
+.main-contant {
+    margin-left: 280px;
+    padding: 40px;
+    width: calc(100% - 280px);
+}
+
+/* ===== NAVIGATION ===== */
+#navigation nav {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+#navigation a {
+    color: #94a3b8;
+    text-decoration: none;
+    font-size: 16px;
+    position: relative;
+    transition: 0.3s;
+}
+
+#navigation a.active,
+#navigation a:hover {
+    color: #38bdf8;
+}
+
+#navigation a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 0;
+    height: 2px;
+    background: #38bdf8;
+    transition: 0.3s;
+}
+
+#navigation a:hover::after,
+#navigation a.active::after {
+    width: 100%;
+}
+
+/* ===== COMMON ===== */
+.heading {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.line {
+    width: 60px;
+    height: 4px;
+    background: #38bdf8;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+.contant {
+    max-width: 750px;
+    line-height: 1.7;
+    color: #cbd5f5;
+}
+
+/* ===== SKILLS ===== */
+.grid-cont {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 25px;
+    margin-top: 20px;
+}
+
+.grid {
+    background: #020617;
+    padding: 20px;
+    text-align: center;
+    border-radius: 12px;
+    transition: 0.4s;
+}
+
+.grid img {
+    width: 45px;
+    margin-bottom: 10px;
+}
+
+.grid:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(56,189,248,0.3);
+}
+
+/* ===== EDUCATION ===== */
+.edtech {
+    position: relative;
+    margin-top: 30px;
+}
+
+.liner {
+    position: absolute;
+    left: 20px;
+    top: 0;
+    height: 100%;
+    width: 3px;
+    background: #38bdf8;
+}
+
+.edfirst, .edsecond {
+    background: #020617;
+    padding: 20px;
+    margin-left: 50px;
+    margin-bottom: 30px;
+    border-radius: 12px;
+    position: relative;
+}
+
+.gole {
+    width: 14px;
+    height: 14px;
+    background: #38bdf8;
+    border-radius: 50%;
+    position: absolute;
+    left: -33px;
+    top: 25px;
+}
+
+/* ===== PORTFOLIO ===== */
+.project-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.project {
+    background: #020617;
+    border-radius: 14px;
+    overflow: hidden;
+    transition: 0.4s;
+}
+
+.project img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card {
+    padding: 20px;
+}
+
+.card span {
+    background: #38bdf8;
+    color: #020617;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    margin-right: 5px;
+}
+
+/* ===== RESPONSIVE ===== */
+
+/* Tablet */
+@media (max-width: 992px) {
+    .sidebar {
+        width: 220px;
+    }
+    .main-contant {
+        margin-left: 220px;
+        width: calc(100% - 220px);
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .sidebar {
+        position: relative;
+        width: 100%;
+        height: auto;
+        animation: none;
+    }
+
+    .main-contant {
+        margin-left: 0;
+        width: 100%;
+        padding: 20px;
+    }
+
+    #navigation nav {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .profile img {
+        width: 100px;
+        height: 100px;
+    }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+    .heading {
+        font-size: 22px;
+    }
+
+    .grid img {
+        width: 35px;
+    }
+
+    .project img {
+        height: 160px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+/* Add these styles to your existing CSS */
+
+/* Smooth transitions */
+* {
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Dark mode base styles */
+body.dark-mode {
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    color: #e2e8f0;
+}
+
+/* Brightness control for images */
+body.dark-mode img {
+    filter: brightness(0.9);
+}
+
+/* Project card animations */
+.project {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+/* Skills grid animations */
+.grid-cont .grid {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.grid-cont .grid:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+/* Active navigation link */
+#navigation nav a.active {
+    color: var(--primary-color, #3b82f6);
+    border-bottom: 2px solid var(--primary-color, #3b82f6);
+}
+
+/* Responsive adjustments for controls */
+@media (max-width: 768px) {
+    #darkModeToggle, .brightness-icon {
+        top: 10px;
+        right: 10px;
+        font-size: 12px;
+        padding: 8px 12px;
+    }
+    
+    .brightness-icon {
+        right: 120px;
+        width: 40px;
+        height: 40px;
+        font-size: 16px;
+    }
+    
+    #brightnessControl {
+        top: 60px;
+        right: 10px;
+        min-width: 180px;
+    }
+}
